@@ -275,4 +275,13 @@ fullName(p);
 
 - The same interface can be used as type in multiple functions and any changes in Person type happens in one place
 - It is also possible to define a property as optional in interface using '?'
-- Use case of optional property is Forms.
+- Use case of optional property is Forms
+
+## Access Modifiers in classes
+
+- keywords that sets the accessibility of properties and methods in class
+- By default, each class member is public, and we can access them freely throughout the program
+- We can explicitly declare such properties as public
+- If we declare a class member as private, it can't be accessed from outside of its containing class. It is a way secure the class properties
+- We can't access private member even in the derived class
+- In some cases, we want a derived class to have access to the base class properties. But the properties should not be accessible outside the classes. We use protected access modifiers in such scenarios
