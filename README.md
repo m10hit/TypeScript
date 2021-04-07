@@ -14,7 +14,7 @@
 
 ## Type Inference
 
-```
+```ts
 var x = 10;
 ```
 
@@ -24,26 +24,26 @@ var x = 10;
 
 ## Explicitly Specifying the Type of a variable using annotations
 
-```
+```ts
 var x:number = 10;
 ```
 
 - initialization is not compulsory
 
-```
+```ts
   var y : string;
 ```
 
 - It is better to use type annotations rather than type inference to declare variables
 
-```
+```ts
   var n1 = 10;
   var n2 = n1 + 10;
 ```
 
 - Here, n2 infers to number
 
-```
+```ts
   var n2 = n1 + "10";
 ```
 
@@ -56,13 +56,14 @@ var x:number = 10;
 - It can hold all the data types
 - It is exactly what we have in JS
 
+```ts
 var bat : any;
-
+```
 ## Enum types
 
 - Used to give friendly names to numeric values and create a type for a variable
 
-```
+```ts
 enum EyeColor {
   Brown,
   Black,
@@ -73,7 +74,7 @@ enum EyeColor {
 - It will by default assign numeric value of 0,1,2 to Brown, Black, and Blue respectively
 - We can assign the values manually as well
 
-```
+```ts
 enum EyeColor {
   Brown=1,
   Black=5,
@@ -88,20 +89,20 @@ enum EyeColor {
 - Declaration is different for arrays and tuples in TS
 - There are two ways to declare arrays in TS
 
-```
+```ts
 let strArr : string[] = ["hey","will"]
 let strArr2 : Array<string> = ["hey","will"]  //Generic Syntax
 ```
 
 - If we have an array of type any, it can hold any value
 
-```
+```ts
 let anyArr: any[] = ['hello', 20, false];
 ```
 
 - Tuples - Special arrays that let us specify types an array can contain
 
-```
+```ts
 let tup: [string, number] = ['hello', 100];
 ```
 
@@ -112,7 +113,7 @@ let tup: [string, number] = ['hello', 100];
 - Flexible way to describe types in TS
 - The type information is erased in TS program when we compile it, we don't have to worry about runtime overhead when using it
 
-```
+```ts
 interface Person {
   fName: string;
   lName: string;
@@ -125,7 +126,7 @@ interface Person {
 - What if we are not sure of any one property?
 - We can make a property in an interface optional by adding a '?' before a property
 
-```
+```ts
 interface Person {
   fName: string;
   lName: string;
