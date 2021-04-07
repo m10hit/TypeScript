@@ -80,3 +80,29 @@ enum EyeColor {
   Blue=10,
 }
 ```
+
+- Here, Brown is a user-friendly name for the value 1
+
+## Array and Tuples
+
+- Declaration is different for arrays and tuples in TS
+- There are two ways to declare arrays in TS
+
+```
+let strArr : string[] = ["hey","will"]
+let strArr2 : Array<string> = ["hey","will"]  //Generic Syntax
+```
+
+- If we have an array of type any, it can hold any value
+
+```
+let anyArr: any[] = ['hello', 20, false];
+```
+
+- Tuples - Special arrays that let us specify types an array can contain
+
+```
+let tup: [string, number] = ['hello', 100];
+```
+
+- Tuples are used to declare arrays when we want particular type of data to be stored and it need not be of single type
