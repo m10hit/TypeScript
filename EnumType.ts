@@ -1,9 +1,9 @@
 enum EyeColor {
   Brown = 1,
-  Black = 5,
+  Black,
   Blue = 10,
 }
 
-var myEyeColor = EyeColor.Brown;
+var myEyeColor = EyeColor.Black;
 console.log(myEyeColor);
 console.log(EyeColor[myEyeColor]);

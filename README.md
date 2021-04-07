@@ -64,9 +64,13 @@ var n2 = n1 + '10';
 - It is the base type for all the primitive types
 - It can hold all the data types
 - It is exactly what we have in JS
+- When we use any type, we can call it, or access any value using dot even if it not an object and it won't give us an error
 
 ```ts
 var bat: any;
+bat();
+bat.a = 10;
+bat.toUpperCase();
 ```
 
 ## Enum types
@@ -121,6 +125,7 @@ let anyArr: any[] = ['hello', 20, false];
 ```
 
 - Tuples - Special arrays that let us specify types an array can contain
+- In tuples, number of elements are fixed and the order of values must match the order of types
 
 ```ts
 let tup: [string, number] = ['hello', 100];
