@@ -1,16 +1,19 @@
 # TypeScript Features
 
-- Typed Superset of JS which compiles to plain JS.
+- Typed Superset of JS which transpiles to plain JS.
 - We can use data types to write our code (optional)
 
 # Why learn TypeScript
 
+- JS is Dynamically typed, which means JS doesn't know the type of a variable unless it is instantiated at runtime, which is too late
 - JS is unable to identify errors during development
 - JS can't identify if the scope of the variable exists or not
 - Sometimes, we assign string to an integer variable, which was declared with the purpose of having only integer values
 - We may call functions with mismatch parameters
-- TypeScript gives an error right away when we write our code and prevents us from doing common mistakes
-- TypeScript is an official language used in Angular 2.
+- TypeScript adds type support to JS
+- TypeScript gives an error right away when we write our code i.e. during compilation and prevents us from doing common mistakes
+- IDE support - intellisense support, ability to refactor code easily and red line when we have error.
+- TypeScript is an official language used in Angular 2 and is also used in React and Vue.
 
 ## Type Inference
 
@@ -25,29 +28,35 @@ var x = 10;
 ## Explicitly Specifying the Type of a variable using annotations
 
 ```ts
-var x:number = 10;
+var x: number = 10;
 ```
 
 - initialization is not compulsory
 
 ```ts
-  var y : string;
+var y: string;
 ```
 
 - It is better to use type annotations rather than type inference to declare variables
 
 ```ts
-  var n1 = 10;
-  var n2 = n1 + 10;
+var n1 = 10;
+var n2 = n1 + 10;
 ```
 
 - Here, n2 infers to number
 
 ```ts
-  var n2 = n1 + "10";
+var n2 = n1 + '10';
 ```
 
 - Here, n2 infers to string
+
+## Use of having Types
+
+- Static type checking - if we assign boolean to a string variable, we get an error right away.
+- This is unlike plain JS which do not prevent us from making mistakes and may get unnoticed during development
+- Accurate Intellisense - If we have a string type, intellisense provides methods and properties applicable to string type
 
 ## Type Any
 
@@ -57,8 +66,9 @@ var x:number = 10;
 - It is exactly what we have in JS
 
 ```ts
-var bat : any;
+var bat: any;
 ```
+
 ## Enum types
 
 - Used to give friendly names to numeric values and create a type for a variable
@@ -76,13 +86,23 @@ enum EyeColor {
 
 ```ts
 enum EyeColor {
-  Brown=1,
-  Black=5,
-  Blue=10,
+  Brown = 1,
+  Black = 5,
+  Blue = 10,
 }
 ```
 
 - Here, Brown is a user-friendly name for the value 1
+
+## Note
+
+- null and undefined are considered as sub-types of all other types
+- It means, we can assign a value of null or undefined to string, boolean, or a number
+
+```ts
+let person: boolean = null;
+let person2: string = undefined;
+```
 
 ## Array and Tuples
 
@@ -90,8 +110,8 @@ enum EyeColor {
 - There are two ways to declare arrays in TS
 
 ```ts
-let strArr : string[] = ["hey","will"]
-let strArr2 : Array<string> = ["hey","will"]  //Generic Syntax
+let strArr: string[] = ['hey', 'will'];
+let strArr2: Array<string> = ['hey', 'will']; //Generic Syntax
 ```
 
 - If we have an array of type any, it can hold any value
