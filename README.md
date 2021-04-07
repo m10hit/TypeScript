@@ -145,7 +145,7 @@ let tup: [string, number] = ['hello', 100];
 
 ## interface
 
-- Flexible way to describe types in TS
+- Flexible way to describe types in TS. It is possible to specify an object as type in TS
 - The type information is erased in TS program when we compile it, we don't have to worry about runtime overhead when using it
 
 ```ts
@@ -234,3 +234,45 @@ function add(num1: number, num2: number = 10): number {
 
 add(5, 10);
 ```
+
+## Using interface with functions when passing object as parameter
+
+```ts
+function fullName(person: { fName: string; lName: string }) {
+  console.log(`${person.fName} ${person.lName}`);
+}
+
+let p = {
+  fName: 'Bruce',
+  lName: 'Wayne',
+};
+
+fullName(p);
+```
+
+- Here, we won't face any issues as our object has only 2 properties
+- What if it has lot of properties, nested properties, or have so many functions that uses same object as parameters
+- Code maintainenace is difficult in such cases
+- We can use interfaces in TS to resolve the issue. We can create interface of the person object and use that interface as a type for the function parameter.
+
+```ts
+interface Person {
+  fName: string;
+  lName: string;
+}
+
+function fullName(person: Person) {
+  console.log(`${person.fName} ${person.lName}`);
+}
+
+let p = {
+  fName: 'Bruce',
+  lName: 'Wayne',
+};
+
+fullName(p);
+```
+
+- The same interface can be used as type in multiple functions and any changes in Person type happens in one place
+- It is also possible to define a property as optional in interface using '?'
+- Use case of optional property is Forms.
