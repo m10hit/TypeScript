@@ -36,3 +36,12 @@ var x:number = 10;
   var n2 = n1 + "10";
 
   - Here, n2 infers to string
+
+## Type Any
+
+- There is no compile-time checking when we use any type
+- It is the base type for all the primitive types
+- It can hold all the data types
+- It is exactly what we have in JS
+
+var bat : any;
