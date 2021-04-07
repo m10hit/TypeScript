@@ -9,3 +9,12 @@
 * We may call functions with mismatch parameters
 * TypeScript gives an error right away when we write our code and prevents us from doing common mistakes
 * TypeScript is an official language used in Angular 2.
+
+## Type Inference
+var x = 10;
+* TypeScript is going to infer that x is a number
+
+## Explicitly Specifying the Type
+var x:number = 10;
+* initialization is not compulsory
+var y : string;
