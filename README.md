@@ -106,3 +106,29 @@ let tup: [string, number] = ['hello', 100];
 ```
 
 - Tuples are used to declare arrays when we want particular type of data to be stored and it need not be of single type
+
+## interface
+
+- Flexible way to describe types in TS
+- The type information is erased in TS program when we compile it, we don't have to worry about runtime overhead when using it
+
+```
+interface Person {
+  fName: string;
+  lName: string;
+  age: number;
+}
+```
+
+- When creating a variable with type Person, we must provide all the three properties in the Person interface
+- The only purpose of interface in TS is to describe a particular type
+- What if we are not sure of any one property?
+- We can make a property in an interface optional by adding a '?' before a property
+
+```
+interface Person {
+  fName: string;
+  lName: string;
+  age?: number;
+}
+```
