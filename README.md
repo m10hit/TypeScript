@@ -14,7 +14,9 @@
 
 ## Type Inference
 
+```
 var x = 10;
+```
 
 - TypeScript is going to infer that x is a number
 - We can't assign a string to x now as TypeScript inferred that data type of x is going to be a number
@@ -22,20 +24,30 @@ var x = 10;
 
 ## Explicitly Specifying the Type of a variable using annotations
 
+```
 var x:number = 10;
+```
 
 - initialization is not compulsory
+
+```
   var y : string;
+```
 
 - It is better to use type annotations rather than type inference to declare variables
+
+```
   var n1 = 10;
   var n2 = n1 + 10;
+```
 
-  - Here, n2 infers to number
+- Here, n2 infers to number
 
+```
   var n2 = n1 + "10";
+```
 
-  - Here, n2 infers to string
+- Here, n2 infers to string
 
 ## Type Any
 
@@ -45,3 +57,26 @@ var x:number = 10;
 - It is exactly what we have in JS
 
 var bat : any;
+
+## Enum types
+
+- Used to give friendly names to numeric values and create a type for a variable
+
+```
+enum EyeColor {
+  Brown,
+  Black,
+  Blue,
+}
+```
+
+- It will by default assign numeric value of 0,1,2 to Brown, Black, and Blue respectively
+- We can assign the values manually as well
+
+```
+enum EyeColor {
+  Brown=1,
+  Black=5,
+  Blue=10,
+}
+```
